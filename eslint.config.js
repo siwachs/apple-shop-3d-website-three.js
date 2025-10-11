@@ -11,7 +11,6 @@ export default defineConfig([
   {
     files: ["**/*.{js,jsx,mjs,cjs}"],
 
-    // 🧠 Tell ESLint how to parse JSX
     languageOptions: {
       parser: babelParser,
       parserOptions: {
@@ -19,26 +18,32 @@ export default defineConfig([
         babelOptions: {
           presets: [["@babel/preset-react", { runtime: "automatic" }]],
         },
-        ecmaFeatures: {
-          jsx: true,
-        },
+        ecmaFeatures: { jsx: true },
         ecmaVersion: "latest",
         sourceType: "module",
       },
       globals: globals.browser,
+      ecmaVersion: 2021,
     },
 
     plugins: {
       react: pluginReact,
       "react-hooks": pluginReactHooks,
       prettier: pluginPrettier,
+      import: require("eslint-plugin-import"),
     },
 
     rules: {
       ...js.configs.recommended.rules,
       ...pluginReact.configs.recommended.rules,
       ...pluginReactHooks.configs.recommended.rules,
-      "prettier/prettier": "error",
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
+      "no-undef": "error",
+      "react/react-in-jsx-scope": "off",
+      "import/no-unresolved": "error", // catches missing files or typos in imports
+      "import/named": "error", // catches named imports that don’t exist
+      "import/default": "error", // catches default imports that are missing
+      "import/namespace": "error", // catches namespace import issues
     },
 
     settings: {
