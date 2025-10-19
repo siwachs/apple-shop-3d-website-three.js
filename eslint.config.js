@@ -1,59 +1,50 @@
-import js from "@eslint/js";
-import globals from "globals";
-import pluginReact from "eslint-plugin-react";
-import pluginReactHooks from "eslint-plugin-react-hooks";
-import pluginPrettier from "eslint-plugin-prettier";
-import configPrettier from "eslint-config-prettier";
-import babelParser from "@babel/eslint-parser";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 
-export default defineConfig([
+import prettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
+
+export default [
   {
-    files: ["**/*.{js,jsx,mjs,cjs}"],
-
+    ignores: ['dist', 'node_modules'],
+  },
+  {
+    files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
-      parser: babelParser,
+      parser: tsParser,
       parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          presets: [["@babel/preset-react", { runtime: "automatic" }]],
-        },
+        ecmaVersion: 'latest',
+        sourceType: 'module',
         ecmaFeatures: { jsx: true },
-        ecmaVersion: "latest",
-        sourceType: "module",
       },
       globals: globals.browser,
-      ecmaVersion: 2021,
     },
-
     plugins: {
-      react: pluginReact,
-      "react-hooks": pluginReactHooks,
-      prettier: pluginPrettier,
-      import: require("eslint-plugin-import"),
+      react: reactPlugin,
+      'react-hooks': reactHooks,
+      '@typescript-eslint': tseslint,
+      prettier,
     },
-
     rules: {
       ...js.configs.recommended.rules,
-      ...pluginReact.configs.recommended.rules,
-      ...pluginReactHooks.configs.recommended.rules,
-      "prettier/prettier": ["error", { endOfLine: "auto" }],
-      "no-undef": "error",
-      "react/react-in-jsx-scope": "off",
-      "import/no-unresolved": "error", // catches missing files or typos in imports
-      "import/named": "error", // catches named imports that don’t exist
-      "import/default": "error", // catches default imports that are missing
-      "import/namespace": "error", // catches namespace import issues
-    },
+      ...tseslint.configs.recommended.rules,
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+      ...prettierConfig.rules,
 
+      // Custom project rules
+      'prettier/prettier': ['error'],
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'react/no-unknown-property': 'off',
+    },
     settings: {
-      react: {
-        version: "detect",
-        jsxRuntime: "automatic",
-      },
+      react: { version: 'detect' },
     },
   },
-
-  // Prettier last
-  configPrettier,
-]);
+];
