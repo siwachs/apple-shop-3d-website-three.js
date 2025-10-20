@@ -666,6 +666,61 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.52.4.tgz#5b2dd648a960b8fa00d76f2cc4eea2f03daa80f4"
   integrity sha512-bf9PtUa0u8IXDVxzRToFQKsNCRz9qLYfR/MpECxl4mRoWYjAeFjgxj1XdZr2M/GNVpT05p+LgQOHopYDlUu6/w==
 
+"@sentry-internal/browser-utils@10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/browser-utils/-/browser-utils-10.20.0.tgz#09b12419807727143c26ee44248db0f8c22aae7c"
+  integrity sha512-9+NybrYs+dEM2iW5uRAYEhKkNK0XhDea5jovtDUXEvdSCMJFcdR88uztkftnCur45/hpvbgSULsGPUdHPb5ITw==
+  dependencies:
+    "@sentry/core" "10.20.0"
+
+"@sentry-internal/feedback@10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/feedback/-/feedback-10.20.0.tgz#213cdbadec1c44f109233f08bda907fda1e31e9d"
+  integrity sha512-R/eGLKl7WDccLKBorEbyTsy5b99w/k4v80SntE8HL2rsO7DCDXma8TGmtHd+iZnw8dUci+EVrw7LbeGSgf3QzA==
+  dependencies:
+    "@sentry/core" "10.20.0"
+
+"@sentry-internal/replay-canvas@10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay-canvas/-/replay-canvas-10.20.0.tgz#4f0a5eba09d53d9c8f5ad0fda699987255bdef30"
+  integrity sha512-8DBawFi4F4e2Cu2ToiitCnYsK8idrDOv66Vq+N6c8e3qFitTTuoPQwOihb2+HY4CB06ABPW3WvfZntJJmsf91w==
+  dependencies:
+    "@sentry-internal/replay" "10.20.0"
+    "@sentry/core" "10.20.0"
+
+"@sentry-internal/replay@10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay/-/replay-10.20.0.tgz#0aab357c072fd8337ddbfec9de2421c66af96552"
+  integrity sha512-+XPYp0CuJnf+c36/c+hHrY6wAPHCdnqllZeyU7+9LAiKsdhN8Oo4eF1v5zd097qDZBg1NrKhU44ScJIzz+vygw==
+  dependencies:
+    "@sentry-internal/browser-utils" "10.20.0"
+    "@sentry/core" "10.20.0"
+
+"@sentry/browser@10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-10.20.0.tgz#57f37691d516525d74e9ea5b108433eb2d568e41"
+  integrity sha512-zcf8HwFiRbzjZL9KbLev44eEOf+yl+3svQbs2BlR2KAYGaB10swV5abij0UTTGO7ClnqUZdcGpwiyyfPS6mjHg==
+  dependencies:
+    "@sentry-internal/browser-utils" "10.20.0"
+    "@sentry-internal/feedback" "10.20.0"
+    "@sentry-internal/replay" "10.20.0"
+    "@sentry-internal/replay-canvas" "10.20.0"
+    "@sentry/core" "10.20.0"
+
+"@sentry/core@10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-10.20.0.tgz#4b1c905348d876735b836fef09668b67810aa15a"
+  integrity sha512-S291KihnOIB8i7mVJIJBVHBMcCfIoY/KDJBHEfBoHY9M56g2An4FVhM9+/xR85+IoMkTySdXN08k9LEyQz4FpQ==
+
+"@sentry/react@^10.20.0":
+  version "10.20.0"
+  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-10.20.0.tgz#8bbeeb2f32290810b44eeddef9fa381cef31a364"
+  integrity sha512-8W+gMkMxQhqlGHCW7kjLhcLgBJ/YSHbLhVd36s0GRudxjXh61K8rdCaAXToD8akgZ76DtLbx5PPQ5fLfQCOnpw==
+  dependencies:
+    "@sentry/browser" "10.20.0"
+    "@sentry/core" "10.20.0"
+    hoist-non-react-statics "^3.3.2"
+
 "@tailwindcss/node@4.1.14":
   version "4.1.14"
   resolved "https://registry.yarnpkg.com/@tailwindcss/node/-/node-4.1.14.tgz#cf3864490c746db6b06b46aa235df9021a289bad"
@@ -1991,6 +2046,13 @@ hls.js@^1.5.17:
   resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-1.6.13.tgz#fcf2823f17aaf9127b9011ef135cae5d2520ab75"
   integrity sha512-hNEzjZNHf5bFrUNvdS4/1RjIanuJ6szpWNfTaX5I6WfGynWXGT7K/YQLYtemSvFExzeMdgdE4SsyVLJbd5PcZA==
 
+hoist-non-react-statics@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
+
 ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
@@ -2703,7 +2765,7 @@ react-dom@^19.1.1:
   dependencies:
     scheduler "^0.27.0"
 
-react-is@^16.13.1:
+react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
