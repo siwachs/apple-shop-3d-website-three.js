@@ -1,16 +1,17 @@
-import { useRef, useState } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { Group } from "three";
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { Group } from 'three';
 
-import ModelView from "./ModelView";
-import { Canvas } from "@react-three/fiber";
-import { View } from "@react-three/drei";
+import ModelView from './ModelView';
+import { Canvas } from '@react-three/fiber';
+import { View } from '@react-three/drei';
+import { animateWithGsapTimeline } from '../../utils/animations';
 
-import { models, sizes } from "../../constants";
+import { models, sizes } from '../../constants';
 
 const Model = () => {
-  const [size, setSize] = useState("small");
+  const [size, setSize] = useState('small');
   const [model, setModel] = useState(models[0]);
 
   // Camera Control for model view
@@ -25,8 +26,25 @@ const Model = () => {
   const [smallRotation, setSmallRotation] = useState(0);
   const [largeRotation, setLargeRotation] = useState(0);
 
+  const tl = gsap.timeline();
+  useEffect(() => {
+    if (size === 'large') {
+      animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
+        transform: 'translateX(-100%)',
+        duration: 2,
+      });
+    }
+
+    if (size === 'small') {
+      animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
+        transform: 'translateX(0)',
+        duration: 2,
+      });
+    }
+  }, [size]);
+
   useGSAP(() => {
-    gsap.to("#heading", {
+    gsap.to('#heading', {
       y: 0,
       opacity: 1,
     });
@@ -63,8 +81,8 @@ const Model = () => {
 
             <Canvas
               className="size-full"
-              style={{ position: "fixed", inset: 0, overflow: "hidden" }}
-              eventSource={document.getElementById("root")}
+              style={{ position: 'fixed', inset: 0, overflow: 'hidden' }}
+              eventSource={document.getElementById('root')}
             >
               <View.Port />
             </Canvas>
@@ -94,8 +112,8 @@ const Model = () => {
                     key={label}
                     className="size-btn"
                     style={{
-                      backgroundColor: size === value ? "white" : "transparent",
-                      color: size === value ? "black" : "white",
+                      backgroundColor: size === value ? 'white' : 'transparent',
+                      color: size === value ? 'black' : 'white',
                     }}
                     onClick={() => setSize(value)}
                     onKeyDown={() => {}}

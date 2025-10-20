@@ -4,10 +4,15 @@ import { Vector3 } from 'three';
 import { View, PerspectiveCamera, Html, OrbitControls } from '@react-three/drei';
 import Lights from './Lights';
 import Iphone from './IPhone';
+import Loader from '../Loader';
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotation, model, size }) => {
   return (
-    <View index={index} id={gsapType} className={`size-full ${index === 2 ? '-right-full' : ''}`}>
+    <View
+      index={index}
+      id={gsapType}
+      className={`absolute size-full ${index === 2 ? '-right-full' : ''}`}
+    >
       {/* Ambient Light: Light all the Object in a Scene Equally */}
       <ambientLight intensity={0.3} />
 
@@ -31,7 +36,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotation, model, 
         <Suspense
           fallback={
             <Html>
-              <div>Loading...</div>
+              <Loader />
             </Html>
           }
         >
