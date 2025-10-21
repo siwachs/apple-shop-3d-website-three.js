@@ -30,6 +30,19 @@ const HowItWorks = () => {
       duration: 1,
       ease: 'power2.inOut',
     });
+
+    animateWithGsap(
+      frameVideoRef.current,
+      {},
+      {
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => frameVideoRef.current.play(),
+        onLeave: () => frameVideoRef.current.pause(),
+        onEnterBack: () => frameVideoRef.current.play(),
+        onLeaveBack: () => frameVideoRef.current.pause(),
+      },
+    );
   }, []);
 
   return (

@@ -1,57 +1,33 @@
-import hero from "/assets/images/hero.jpeg";
+const BASE = '/apple-shop-3d-threejs';
 
-export const heroImg = hero;
+// Images
+export const heroImg = `${BASE}/assets/images/hero.jpeg`;
+export const appleImg = `${BASE}/assets/images/apple.svg`;
+export const searchImg = `${BASE}/assets/images/search.svg`;
+export const bagImg = `${BASE}/assets/images/bag.svg`;
+export const watchImg = `${BASE}/assets/images/watch.svg`;
+export const rightImg = `${BASE}/assets/images/right.svg`;
+export const replayImg = `${BASE}/assets/images/replay.svg`;
+export const playImg = `${BASE}/assets/images/play.svg`;
+export const pauseImg = `${BASE}/assets/images/pause.svg`;
+export const yellowImg = `${BASE}/assets/images/yellow.jpg`;
+export const blueImg = `${BASE}/assets/images/blue.jpg`;
+export const whiteImg = `${BASE}/assets/images/white.jpg`;
+export const blackImg = `${BASE}/assets/images/black.jpg`;
+export const explore1Img = `${BASE}/assets/images/explore1.jpg`;
+export const explore2Img = `${BASE}/assets/images/explore2.jpg`;
+export const chipImg = `${BASE}/assets/images/chip.jpeg`;
+export const frameImg = `${BASE}/assets/images/frame.png`;
 
-import hmv from "/assets/videos/hero.mp4";
-import smallmv from "/assets/videos/smallHero.mp4";
-import highlightFirstmv from "/assets/videos/highlight-first.mp4";
-import highlightSectmv from "/assets/videos/hightlight-third.mp4";
-import highlightThirdmv from "/assets/videos/hightlight-sec.mp4";
-import highlightFourthmv from "/assets/videos/hightlight-fourth.mp4";
-import exploremv from "/assets/videos/explore.mp4";
-import framemv from "/assets/videos/frame.mp4";
+// Videos
+export const heroVideo = `${BASE}/assets/videos/hero.mp4`;
+export const smallHeroVideo = `${BASE}/assets/videos/smallHero.mp4`;
+export const highlightFirstVideo = `${BASE}/assets/videos/highlight-first.mp4`;
+export const highlightSecondVideo = `${BASE}/assets/videos/hightlight-third.mp4`;
+export const highlightThirdVideo = `${BASE}/assets/videos/hightlight-sec.mp4`;
+export const highlightFourthVideo = `${BASE}/assets/videos/hightlight-fourth.mp4`;
+export const exploreVideo = `${BASE}/assets/videos/explore.mp4`;
+export const frameVideo = `${BASE}/assets/videos/frame.mp4`;
 
-import apple from "/assets/images/apple.svg";
-import search from "/assets/images/search.svg";
-import bag from "/assets/images/bag.svg";
-import watch from "/assets/images/watch.svg";
-import right from "/assets/images/right.svg";
-import replay from "/assets/images/replay.svg";
-import play from "/assets/images/play.svg";
-import pause from "/assets/images/pause.svg";
-
-import yellow from "/assets/images/yellow.jpg";
-import blue from "/assets/images/blue.jpg";
-import white from "/assets/images/white.jpg";
-import black from "/assets/images/black.jpg";
-import explore1 from "/assets/images/explore1.jpg";
-import explore2 from "/assets/images/explore2.jpg";
-import chip from "/assets/images/chip.jpeg";
-import frame from "/assets/images/frame.png";
-
-export const heroVideo = hmv;
-export const smallHeroVideo = smallmv;
-export const highlightFirstVideo = highlightFirstmv;
-export const highlightSecondVideo = highlightSectmv;
-export const highlightThirdVideo = highlightThirdmv;
-export const highlightFourthVideo = highlightFourthmv;
-export const exploreVideo = exploremv;
-export const frameVideo = framemv;
-
-export const appleImg = apple;
-export const searchImg = search;
-export const bagImg = bag;
-export const watchImg = watch;
-export const rightImg = right;
-export const replayImg = replay;
-export const playImg = play;
-export const pauseImg = pause;
-
-export const yellowImg = yellow;
-export const blueImg = blue;
-export const whiteImg = white;
-export const blackImg = black;
-export const explore1Img = explore1;
-export const explore2Img = explore2;
-export const chipImg = chip;
-export const frameImg = frame;
+// 3D model
+export const sceneModel = `${BASE}/models/scene.glb`;

@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
 import { Color } from 'three';
 
+import { sceneModel } from '../../utils';
+
 function IPhone(props) {
-  const { nodes, materials } = useGLTF('/models/scene.glb', true);
+  const { nodes, materials } = useGLTF(sceneModel, true);
   const texture = useTexture(props.model.img);
 
   useEffect(() => {
@@ -249,4 +251,4 @@ function IPhone(props) {
 
 export default IPhone;
 
-useGLTF.preload('/models/scene.glb');
+useGLTF.preload(sceneModel);
