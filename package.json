@@ -12,7 +12,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -f"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -20,7 +20,6 @@
     "@react-three/fiber": "^9.4.0",
     "@sentry/react": "^10.20.0",
     "@tailwindcss/vite": "^4.1.14",
-    "gh-pages": "^6.3.0",
     "gsap": "^3.13.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -40,6 +39,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
     "vite": "^7.1.7"
