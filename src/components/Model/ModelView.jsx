@@ -35,8 +35,8 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotation, model, 
       <group ref={groupRef} name={`${index === 1 ? 'small' : 'large'}`} position={[0, 0, 0]}>
         <Suspense
           fallback={
-            <Html>
-              <Loader />
+            <Html fullscreen>
+              <Loader text="Loading IPhone..." />
             </Html>
           }
         >
